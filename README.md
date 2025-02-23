@@ -9,7 +9,6 @@
 
 **Search-LLM-deploy-streamlit** is a powerful Streamlit application 🤖 that combines the capabilities of Large Language Models (LLMs) with web search 🌐 and academic research tools 📚. It allows users to ask questions and receive comprehensive answers 💡, leveraging Groq's fast inference ⚡, DuckDuckGo search 🦆, Arxiv for academic papers 🔬, and Wikipedia for general knowledge 📖. This project demonstrates how to deploy an intelligent search agent using Streamlit and LangChain, with robust LangSmith tracing 🕵️‍♂️ for debugging and performance analysis.
 
-**[Add a screenshot here! Replace with your image link or relative path.]**
 
 ## Table of Contents
 
