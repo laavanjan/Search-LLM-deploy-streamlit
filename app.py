@@ -20,10 +20,8 @@ wiki = WikipediaQueryRun(api_wrapper=api_wrapper)
 
 search = DuckDuckGoSearchRun(name="Search")
 
-st.title("🔎 Search Bot")
-"""
-In this example, we're using `StreamlitCallbackHandler` to display the thoughts and actions of an agent in an interactive Streamlit app.
-"""
+st.title("🔎 Search Bot ")
+
 
 ## Groq API settings
 api_key = st.secrets["general"]["GROQ_KEY"]
@@ -50,3 +48,60 @@ if prompt := st.chat_input(placeholder="What is machine learning?"):
         response = search_agent.run(st.session_state.messages, callbacks=[st_cb])
         st.session_state.messages.append({'role': 'assistant', "content": response})
         st.write(response)
+
+# Custom footer styling
+footer_html = """
+    <style>
+    body {
+        margin: 0;
+        padding: 0;
+        min-height: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .footer {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        background: linear-gradient(135deg, #6a82fb, #fc5c7d);  /* Smooth purple-pink gradient */
+        color: white;
+        text-align: center;
+        padding: 8px 16px;  /* Reduced padding to decrease height */
+        font-size: 14px;  /* Reduced font size */
+        font-family: 'Arial', sans-serif;
+        border-top: 2px solid #ffffff33;
+        box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.3);
+        animation: fadeIn 3s ease-out;
+    }
+
+    .footer b {
+        color: #e0fffc;  /* Soft cyan color */
+        font-size: 16px;  /* Reduced font size */
+        transition: color 0.3s ease;
+    }
+
+    .footer b:hover {
+        color: #ffdd00;  /* Bright yellow hover effect */
+    }
+
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+    </style>
+
+    <div class="footer">
+        Developed by <b>Laavanjan</b> | © Faculty of IT B22
+    </div>
+"""
+
+# Render the footer in the Streamlit app
+st.markdown(footer_html, unsafe_allow_html=True)
