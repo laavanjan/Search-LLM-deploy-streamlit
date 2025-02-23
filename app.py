@@ -49,59 +49,45 @@ if prompt := st.chat_input(placeholder="What is machine learning?"):
         st.session_state.messages.append({'role': 'assistant', "content": response})
         st.write(response)
 
-# Custom footer styling
-footer_html = """
+st.markdown(
+    """
     <style>
-    body {
-        margin: 0;
-        padding: 0;
-        min-height: 100%;
-        display: flex;
-        flex-direction: column;
-    }
-
-    .footer {
-        position: fixed;
-        bottom: 0;
-        left: 0;
-        width: 100%;
-        background: linear-gradient(135deg, #6a82fb, #fc5c7d);  /* Smooth purple-pink gradient */
-        color: white;
-        text-align: center;
-        padding: 8px 16px;  /* Reduced padding to decrease height */
-        font-size: 14px;  /* Reduced font size */
-        font-family: 'Arial', sans-serif;
-        border-top: 2px solid #ffffff33;
-        box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.3);
-        animation: fadeIn 3s ease-out;
-    }
-
-    .footer b {
-        color: #e0fffc;  /* Soft cyan color */
-        font-size: 16px;  /* Reduced font size */
-        transition: color 0.3s ease;
-    }
-
-    .footer b:hover {
-        color: #ffdd00;  /* Bright yellow hover effect */
-    }
-
-    @keyframes fadeIn {
-        from {
-            opacity: 0;
-            transform: translateY(20px);
+        /* Push content above footer */
+        .main-container {
+            padding-bottom: 50px; /* Prevents content from overlapping with footer */
         }
-        to {
-            opacity: 1;
-            transform: translateY(0);
+
+        /* Footer Styling */
+        .footer {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: linear-gradient(135deg, #6a82fb, #fc5c7d);
+            color: white;
+            text-align: center;
+            padding: 12px;
+            font-size: 14px;
+            font-family: Arial, sans-serif;
+            border-top: 2px solid #ffffff33;
+            box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.3);
+            z-index: 1000;
         }
-    }
+
+        .footer b {
+            color: #e0fffc;  /* Soft cyan color */
+            font-size: 16px;
+            transition: color 0.3s ease;
+        }
+
+        .footer b:hover {
+            color: #ffdd00;  /* Bright yellow hover effect */
+        }
     </style>
-
+    
     <div class="footer">
         Developed by <b>Laavanjan</b> | © Faculty of IT B22
     </div>
-"""
-
-# Render the footer in the Streamlit app
-st.markdown(footer_html, unsafe_allow_html=True)
+    """,
+    unsafe_allow_html=True
+)
