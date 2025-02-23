@@ -44,6 +44,14 @@ This application provides an interactive chatbot interface 💬 for users to ask
 
 ## Working Examples
 
+| Image 1 | Image 2 | Image 3 |
+|---------|---------|---------|
+| ![Image 1 Alt Text](img1.png) | ![Image 2 Alt Text](img2.png) | ![Image 3 Alt Text](img3.png) |
+| What is Bayes theorem | Describe SriLanka | Describe University of Moratuwa |
+| Image 4 | Image 5 | Image 6 |
+| ![Image 4 Alt Text](img4.png) | ![Image 5 Alt Text](img5.png) | ![Image 6 Alt Text](img6.png) |
+| Who is the main character dragon ball | who wrote dragon ball | Explain the 3 laws of Newton |
+
 ## Live Demo
 
 Try the live demo of the chatbot here:
