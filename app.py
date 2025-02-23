@@ -20,7 +20,7 @@ wiki = WikipediaQueryRun(api_wrapper=api_wrapper)
 
 search = DuckDuckGoSearchRun(name="Search")
 
-st.title("🔎 Search Bot ")
+st.title("🔎 Multi-Source Search Chatbot with Groq and LangChain ")
 
 
 ## Groq API settings
