@@ -11,7 +11,7 @@ os.environ["LANGCHAIN_API_KEY"] = st.secrets["general"]["LANGCHAIN_API_KEY"]
 os.environ["LANGCHAIN_TRACING_V2"] = "true"
 os.environ["LANGCHAIN_PROJECT"] = st.secrets["general"]["LANGCHAIN_PROJECT"]
 
-## Arxiv and Wikipedia Tools
+## Arxiv and Wikipedia Tools for LLM
 arxiv_wrapper = ArxivAPIWrapper(top_k_results=1, doc_content_chars_max=200)
 arxiv = ArxivQueryRun(api_wrapper=arxiv_wrapper)
 
